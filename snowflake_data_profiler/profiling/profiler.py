@@ -30,8 +30,6 @@ def file_to_df(file_name):
         df = pd.read_sql(file_name)
     elif file_name.endswith('.html'):
         df = pd.read_html(file_name)
-    elif file_name.endswith('.sql'):
-        df = pd.read_sql(file_name)
     return df
 
 
@@ -42,7 +40,7 @@ def get_snowflake_connection(sfUser, sfPswd, sfURL, sfDatabase, sfSchema, sfTabl
         raise ValueError('A required variable has not been added.')
 
     sfAccount = get_snowflake_account_name(sfURL)
-    
+
     con = connector.connect(
         user=sfUser,
         password=sfPswd,
@@ -107,5 +105,3 @@ def get_profile(sfUser, sfPswd, sfURL, sfDatabase, sfSchema, sfTable, sfRole=Non
     pd_df = get_pandas_dataframe(conn, sfDatabase, sfSchema, sfTable, sfWarehouse)
 
     return get_profile_results(pd_df)
-
-

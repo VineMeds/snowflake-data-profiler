@@ -141,20 +141,3 @@ def test_get_profile_results():
     d = {'col1': [1, 2], 'col2': [3, 4]}
     result = get_profile_results(pd.DataFrame(data=d))
     assert type(result) == str
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

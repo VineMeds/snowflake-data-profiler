@@ -3,7 +3,7 @@ from snowflake_data_profiler.profiling.profiler import get_profile
 from snowflake_data_profiler.error_handling.error_handler import input_error
 
 #==============================================================================
-# default API 
+# default API
 #==============================================================================
 # define namespace
 bp = Blueprint('default', __name__)
@@ -44,9 +44,3 @@ def post_data():
 
     return Response(profile_page, mimetype='text/html')
 #==============================================================================
-
-
-
-
-
-

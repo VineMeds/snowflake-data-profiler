@@ -1,5 +1,5 @@
-from snowflake_data_profiler.app import app
 import pytest
+from snowflake_data_profiler.app import app
 
 
 @pytest.fixture(scope='module')
@@ -25,9 +25,3 @@ def test_get_data(tester):
     # ensure flask set up correctly
     response = tester.get('/notreal', content_type='html/text')
     assert response.status_code == 404
-
-
-
-
-
-
